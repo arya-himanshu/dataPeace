@@ -1,0 +1,42 @@
+ <div class="main-container">
+   <div class="search-user">
+     <input class="" type="text" [(ngModel)]="keyword" (change)="searchUser(keyword)">
+   </div>
+   <table>
+     <thead>
+       <tr style="background: aliceblue;">
+         <th>id</th>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>company Name</th>
+         <th>City</th>
+         <th>state</th>
+         <th>Zip</th>
+         <th>Email</th>
+         <th>Web</th>
+         <th>Age</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let user of users">
+         <td>{{ user?.id }}</td>
+         <td>{{ user?.first_name }}</td>
+         <td>{{ user?.last_name }}</td>
+         <td>{{ user?.company_name }}</td>
+         <td>{{ user?.city }}</td>
+         <td>{{ user?.state }}</td>
+         <td>{{ user?.zip }}</td>
+         <td>{{ user?.email }}</td>
+         <td>{{ user?.web }}</td>
+         <td>{{ user?.age }}</td>
+       </tr>
+     </tbody>
+   </table>
+   <div class="pagination">
+
+     <ng-container *ngFor="let index of pageIndexs">
+       <span class="span-index  " (click)="chnageIndex(index)">{{index}}</span>
+     </ng-container>
+
+   </div>
+ </div>
