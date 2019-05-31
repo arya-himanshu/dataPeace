@@ -4,7 +4,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 10px;
@@ -57,4 +58,17 @@ tr:nth-child(even) {
 .pagination span:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+
+.no-data-found {
+  border: 1px solid red;
+  height: 200px;
+}
+
+.search {
+  padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  box-shadow: 7px 8px 10px 0px #a7a0a0;
 }

@@ -1,20 +1,21 @@
  <div class="main-container">
    <div class="search-user">
-     <input class="" type="text" [(ngModel)]="keyword" (change)="searchUser(keyword)">
+     <input class="" type="text" class="search" placeholder="Search User.." [(ngModel)]="keyword"
+       (change)="searchUser(keyword)">
    </div>
    <table>
      <thead>
        <tr style="background: aliceblue;">
-         <th>id</th>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>company Name</th>
-         <th>City</th>
-         <th>state</th>
-         <th>Zip</th>
-         <th>Email</th>
-         <th>Web</th>
-         <th>Age</th>
+         <th (click)="sorting('id')">id</th>
+         <th (click)="sorting('first_name')">First Name</th>
+         <th (click)="sorting('last_name')">Last Name</th>
+         <th (click)="sorting('company_name')">company Name</th>
+         <th (click)="sorting('city')">City</th>
+         <th (click)="sorting('state')">state</th>
+         <th (click)="sorting('zip')">Zip</th>
+         <th (click)="sorting('email')">Email</th>
+         <th (click)="sorting('web')">Web</th>
+         <th (click)="sorting('age')">Age</th>
        </tr>
      </thead>
      <tbody>
@@ -30,13 +31,17 @@
          <td>{{ user?.web }}</td>
          <td>{{ user?.age }}</td>
        </tr>
+       <tr class="no-data-found" *ngIf="users.length==0">
+         <td colspan="10">
+           <p style="font-weight: bold;color:red; font-size: 20px;">No record found</p>
+         </td>
+       </tr>
      </tbody>
+
    </table>
    <div class="pagination">
-
      <ng-container *ngFor="let index of pageIndexs">
-       <span class="span-index  " (click)="chnageIndex(index)">{{index}}</span>
+       <span class="span-index  " (click)="chnageIndex(globalUsers,userLength,perPage,index)">{{index}}</span>
      </ng-container>
-
    </div>
  </div>
