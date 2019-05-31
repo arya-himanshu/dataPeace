@@ -5,7 +5,7 @@
    </div>
    <table>
      <thead>
-       <tr style="background: aliceblue;">
+       <tr style="background: aliceblue; cursor: pointer;">
          <th (click)="sorting('id')">id</th>
          <th (click)="sorting('first_name')">First Name</th>
          <th (click)="sorting('last_name')">Last Name</th>
@@ -20,7 +20,7 @@
      </thead>
      <tbody>
        <tr *ngFor="let user of users">
-         <td>{{ user?.id }}</td>
+         <td style="cursor:pointer;" (click)="toUserDetails(user?.id)">{{ user?.id }}</td>
          <td>{{ user?.first_name }}</td>
          <td>{{ user?.last_name }}</td>
          <td>{{ user?.company_name }}</td>

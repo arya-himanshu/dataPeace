@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { User } from "src/app/models/user";
 import { UserService } from "../user.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-user",
@@ -9,7 +10,7 @@ import { UserService } from "../user.service";
   styleUrls: ["./user.component.css"]
 })
 export class UserComponent implements OnInit {
-  constructor(private userSerive: UserService) {}
+  constructor(private userSerive: UserService, private router: Router) {}
   users: Array<User> = new Array();
   globalUsers: Array<User> = new Array();
   pageIndexs: Array<number> = new Array();
@@ -184,5 +185,9 @@ export class UserComponent implements OnInit {
         // code block
       }
     });
+  }
+
+  toUserDetails(userId:number){
+     this.router.navigate(['/user-details/'+userId]);
   }
 }

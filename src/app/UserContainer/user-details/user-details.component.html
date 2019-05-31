@@ -1,3 +1,31 @@
-<p>
-  user-details works!
-</p>
+
+<a routerLink="/user"><- Back</a>
+<table>
+  <tr >
+    <th colspan="9">{{user.first_name}}</th>
+     
+  </tr>
+  <tr>
+    <td>First Name</td>
+    <td>Last Name	</td>
+    <td>company Name	</td>
+    <td>City</td>
+    <td>state</td>
+    <td>Zip</td>
+    <td>Email</td>
+    <td>Web</td>
+    <td>Age</td>
+  </tr>
+  <tr>
+    <td>{{ user?.first_name }}</td>
+    <td>{{ user?.last_name }}</td>
+    <td>{{ user?.company_name }}</td>
+    <td>{{ user?.city }}</td>
+    <td>{{ user?.state }}</td>
+    <td>{{ user?.zip }}</td>
+    <td>{{ user?.email }}</td>
+    <td>{{ user?.web }}</td>
+    <td>{{ user?.age }}</td>
+  </tr>
+  
+</table>
